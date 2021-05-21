@@ -1,5 +1,5 @@
 # Text-File-Manager
-A simple to use library to read and write .txt files in C#.<br/>
+Simple to use library to read and write .txt files in C#.<br/>
 
 ## Documentation
 #### **string SeperateAllLines(string path, char separator)**<br/>
@@ -35,6 +35,10 @@ A simple to use library to read and write .txt files in C#.<br/>
 #### **void WriteValueToFile(string path, object value)**<br/>
 **Usage:** Takes any variable and writes it into your text file.<br/>
 **Parameters:** string path - Path to the file you want to read from, object value - Any data type variable.<br/>
+
+#### **void CreateFile(string name)**<br/>
+**Usage:** Creates a file with specified name.<br/>
+**Parameters:** string name - a string that describes the name of your file .<br/>
 
 
 # To-Do<br/>
