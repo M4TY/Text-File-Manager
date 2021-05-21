@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace TextFileManager
@@ -7,76 +7,65 @@ namespace TextFileManager
     {
         public static string SeperateAllLines(string path, char separator)
         {
-            if (File.Exists(path))
-            {
+            if (!File.Exists(path)) { return "Missing file"; }
+            
                 StreamReader sr = File.OpenText(path);
                 string s = "";
                 string final = "";
                 while((s = sr.ReadLine()) != null)
                 {
-                    final += $"{s}{separator}";
+                    final += $" {s}{separator}";
                 }
 
                 sr.Close();
                 return final;
-            }
-            return "Missing file";
-            
         }
 
         public static string ReadSpecificLine(string path, int line)
         {
-            if (File.Exists(path))
+            if (!File.Exists(path)) { return "Missing file"; }
+            
+            StreamReader sr = File.OpenText(path);
+            string s = "";
+            
+
+            for (int i = 1; i <= line; i++)
             {
-                StreamReader sr = File.OpenText(path);
-                string s = "";
-                
+                s = sr.ReadLine();
 
-                for (int i = 1; i <= line; i++)
+                if (i == line)
                 {
-                    s = sr.ReadLine();
-
-                    if (i == line)
-                    {
-                        sr.Close();
-                        return s;   
-                    }
-
-                    
-
+                    sr.Close();
+                    return s;   
                 }
-                return "Line doesn't exist";
+
             }
-            return "Missing file";
+
+            return "Line doesn't exist";
+            
+            
         }
 
         public static int LinesCount(string path)
         {
-            if(File.Exists(path))
+            if(!File.Exists(path)) { return 0; }
+            
+            StreamReader sr = File.OpenText(path);
+            int final = 0;
+
+            while((sr.ReadLine()) != null)
             {
-                StreamReader sr = File.OpenText(path);
-                string s = "";
-                int final = 0;
-
-                while((s = sr.ReadLine()) != null)
-                {
-                    final++;
-                }
-
-                sr.Close();
-                return final;
+                final++;
             }
 
-            return 0;
+            sr.Close();
+            return final;
+
         }
 
         public static bool DoesExist(string path)
         {
-            if (File.Exists(path))
-            {
-                return true;
-            }
-            return false;
+            return File.Exists(path);
         }
 
         public static void WriteArrayToFile(string path, string[] array)
@@ -91,8 +80,6 @@ namespace TextFileManager
                     sw.WriteLine(content);
                 }
                 sw.Close();
-                
-
             }
             
         }
@@ -106,6 +93,11 @@ namespace TextFileManager
                 sw.WriteLine(value);
                 sw.Close();
             }
+        }
+
+        public static void CreateFile(string name)
+        {
+            StreamWriter sw = new StreamWriter($"{name}.txt");
         }
     }
 }
