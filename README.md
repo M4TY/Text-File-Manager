@@ -1,5 +1,5 @@
 # Text-File-Manager
-A simple to use library to read and write .txt files in C#.<br/>
+Simple to use library to read and write .txt files in C#.<br/>
 
 ## Documentation
 #### **string SeperateAllLines(string path, char separator)**<br/>
