@@ -6,6 +6,7 @@ Simple to use library to read and write .txt files in C#.<br/>
 **Usage:** Loads all lines from a text file and merges them into a single line with each word seperated with a character. Returns a sentence.<br/>
 **Parameters:** string path - Path to the file you want to read from, char separator - is a character you want to split the words with.<br/>
 
+-------------------------------------------------------------------------------------------------------------------------
 
 #### **string ReadSpecificLine(string path, int line)**<br/>
 **Usage:** Returns contents of specific line in a .txt file.<br/> 
