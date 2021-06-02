@@ -51,5 +51,5 @@ Simple to use library to read and write .txt files in C#.<br/>
 -------------------------------------------------------------------------------------------------------------------------
 
 # To-Do<br/>
-- [ ] Improve documentation<br/>
+- [X] Improve documentation<br/>
 - [ ] Add more methods<br/>
