@@ -42,9 +42,7 @@ namespace TextFileManager
                 if (i == line && s == null)
                 {
                     return "Line doesn't exist or is empty";
-
                 }
-
             }
 
             return "Line doesn't exist or is empty";
@@ -55,15 +53,15 @@ namespace TextFileManager
             if(!File.Exists(path)) { return 0; }
             
             StreamReader sr = File.OpenText(path);
-            int final = 0;
+            int count = 0;
 
             while((sr.ReadLine()) != null)
             {
-                final++;
+                count++;
             }
 
             sr.Close();
-            return final;
+            return count;
 
         }
 
@@ -72,7 +70,6 @@ namespace TextFileManager
 
         public static void WriteArrayToFile(string path, string[] array)
         {
-            
             StreamWriter sw = new StreamWriter(path);
 
             if (!File.Exists(path)) { return; }
@@ -82,7 +79,6 @@ namespace TextFileManager
                 sw.WriteLine(content);
             }
             sw.Close();
-            
             
         }
 
